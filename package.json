@@ -1,0 +1,26 @@
+{
+	"name": "generic-tcp-udp",
+	"version": "0.0.1",
+	"api_version": "1.0.0",
+	"keywords": [
+		"Protocol",
+		"Generic"
+	],
+	"manufacturer": "Generic",
+	"product": "TCP/UDP Requests",
+	"shortname": "tcp-udp",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/storybel/companion-module-generic-tcp-udp.git"
+	},
+	"author": "Mickael Monsieur <mickael@storybel.com>",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/storybel/companion-module-generic-tcp-udp/issues"
+	},
+	"homepage": "https://github.com/storybel/companion-module-generic-tcp-udp#readme"
+}
