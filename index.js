@@ -52,10 +52,10 @@ instance.prototype.init_socket = function() {
 
 	if (self.config.host !== undefined && self.config.port !== undefined) {
 
-		if (action.action == 'tcp') {
+		if (self.config.type == 'tcp') {
 			self.socket = new tcp(self.config.host, self.config.port, { reconnect_interval:5000 });
 		}
-		else if (action.action == 'udp') {
+		else if (self.config.type == 'udp') {
 			self.socket = new udp(self.config.host, self.config.port);
 		}
 
@@ -99,6 +99,16 @@ instance.prototype.config_fields = function () {
 			id: 'port',
 			label: 'Port number',
 			width: 5
+		},
+		{
+		  type: 'dropdown',
+		  label: 'Type',
+		  id: 'type',
+		  default: 'tcp',
+		  choices: [
+		    { id: 'tcp', label: 'TCP' },
+		    { id: 'udp', label: 'UDP' }
+		  ]
 		}
 	]
 }
@@ -119,24 +129,13 @@ instance.prototype.actions = function(system) {
 
 	self.setActions({
 		'tcp': {
-			label: 'TCP',
+			label: 'Command',
 			options: [
 				{
 					type: 'textinput',
 					label: 'Command',
 					id: 'command',
 					default: ''
-				}
-			]
-		},
-		'udp': {
-			label: 'UDP',
-			options: [
-				{
-					type: 'textinput',
-					label: 'Command',
-					id: 'command',
-					default: '',
 				}
 			]
 		}
